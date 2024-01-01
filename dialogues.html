@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <title>Dialoghi</title>
+  <style>
+    /* CSS Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Your style here*/
+
+    @import url('<https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap>');
+
+    .container {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 10px;
+      padding: 5px;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      /* Add this line */
+    }
+
+    .number {
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      writing-mode: vertical-rl;
+      user-select: none;
+      background-color: gainsboro;
+      padding: 5px;
+      margin-left: -10px;
+      margin-top: 0px;
+    }
+
+    .title {
+      text-align: center;
+      padding-top: 2px;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    .dialogue {
+      border: 1px solid black;
+      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+      /* flex: 1 1 auto; */
+      padding-left: 10px;
+      font-size: 1.2rem;
+      outline: 3px double #32a1ce;
+      margin: auto;
+    }
+
+    .dialogue span {
+      white-space: pre;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    rt {
+      user-select: none;
+    }
+
+    #furiganaBtn {
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin-top: 5px;
+      margin-left: 5px;
+      padding: 5px;
+    }
+
+    b {
+      color: crimson;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Your content here -->
+
+  <script>
+    // Your script here
+    function toggleFurigana() {
+      var rtElements = document.querySelectorAll('.dialogue rt');
+      for (var i = 0; i < rtElements.length; i++) {
+        rtElements[i].style.visibility = (rtElements[i].style.visibility === 'hidden') ? 'visible' : 'hidden';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
+<button id="furiganaBtn" onclick="toggleFurigana()">Show furigana</button>
+<div class="container">
+  <div class="dialogue">
+    <div class="number">第<b>一</b>課</div>
+    <span>
+      1 早く。
+      2 行きましょう。
+      3 わかりました。
+      4 どこへ。
+      5 あそこへ。
+      6 暑いですね。
+      7 そうですね。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>ニ</b>課</div>
+    <div class="title">ピカソ展</div>
+    <span>
+      1 見ましたか。
+      2 何を。
+      3 ピカソ展。
+      4 まだです。
+      5 いいですよ。
+      6 そうですか。
+      7 あした行きます。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>三</b>課</div>
+    <div class="title"><ruby>
+        <rb>朝食</rb>
+        <rp>(</rp>
+        <rt>ちょうしょく</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 おはようございます。
+      2 おはようございます。
+      3 パンを食べますか。
+      4 食べます。
+      5 コーヒーを飲みますか。
+      6 飲みます。
+      7 ビールを飲みますか。
+      8 飲みません。
+      9 りんごを食べますか。
+      10 食べません。
+      11 それでは卵を食べますか。
+      12 食べます。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>四</b>課</div>
+    <div class="title"><ruby>
+        <rb>税関</rb>
+        <rp>(</rp>
+        <rt>ぜいかん</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 カメラを持っていますか。
+      2 はい、持っています。
+      3 どこにありますか。
+      4 トランクの中にあります。
+      5 トランクの中に何がありますか。
+      6 服と本があります。
+      7 それだけですか。
+      8 はい、そうです。
+      9 お酒？
+      10 ありません。
+      11 はい、けっこうです。
+    </span>
+  </div>
+
+
+  <div class="dialogue">
+    <div class="number">第<b>五</b>課</div>
+    <div class="title">買物</div>
+    <span>
+      1 どこへ行きますか。
+      2 デパートへ行きます。
+      3 一緒に行きます。
+      4 何を買いますか。
+      5 <ruby>
+        <rb>靴下</rb>
+        <rp>(</rp>
+        <rt>くつした</rt>
+        <rp>)</rp>
+      </ruby>を買います。
+      6 <ruby>
+        <rb>着</rb>
+        <rp>(</rp>
+        <rt>つ</rt>
+        <rp>)</rp>
+      </ruby>きました。
+      7 <ruby>
+        <rb>入</rb>
+        <rp>(</rp>
+        <rt>はい</rt>
+        <rp>)</rp>
+      </ruby>りましょう。
+      8 ここに靴下があります。
+      9 でも高いですね。
+      10 そうですね。
+      11 やめます。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>六</b>課</div>
+    <div class="title">東京スカイツリー</div>
+    <span>
+      1 東京スカイツリーを知っていますか。
+      2 はい、知っています。
+      3 ここからどう行きますか。
+      4 まず<ruby>
+        <rb>船橋</rb>
+        <rp>(</rp>
+        <rt>ふなばし</rt>
+        <rp>)</rp>
+      </ruby>駅までバスで行きます。
+      5 近いです。
+      6 そこから<ruby>
+        <rb>押上</rb>
+        <rp>(</rp>
+        <rt>おしあげ</rt>
+        <rp>)</rp>
+      </ruby>駅まで電車で行きます。
+      7 それから押上駅からスカイツリーまで<ruby>
+        <rb>歩</rb>
+        <rp>(</rp>
+        <rt>ある</rt>
+        <rp>)</rp>
+      </ruby>きます。
+      8 スカイツリーに<ruby>
+        <rb>水族館</rb>
+        <rp>(</rp>
+        <rt>すいぞくかん</rt>
+        <rp>)</rp>
+      </ruby>があります。
+      9 おもしろいです。
+      10 おみやげの店もたくさんあります。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="title"><ruby>
+        <rb>復習</rb>
+        <rp>(</rp>
+        <rt>ふくしゅう</rt>
+        <rp>)</rp>
+      </ruby><ruby>
+        <rb>会話</rb>
+        <rp>(</rp>
+        <rt>かいわ</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 どこへ行きましたか。
+      2 デパートへ行きました。
+      3 カメラを買いますか。
+      4 高いですよ。買いません。
+      5 東京スカイツリーの中に店がありますか。
+      6 はい、たくさんあります。
+      7 あした何を見ますか。
+      8 分かりません。
+      9 船橋駅まで歩きますか。
+      10 歩きません。電車で行きます。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>八</b>課</div>
+    <div class="title"><ruby>
+        <rb>映画</rb>
+        <rp>(</rp>
+        <rt>えいが</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 昨日何をしましたか。
+      2 友達が来ました。
+      3 一緒に映画に行きました。
+      4 <ruby>
+        <rb>何</rb>
+        <rp>(</rp>
+        <rt>なん</rt>
+        <rp>)</rp>
+      </ruby>の映画を見ましたか。
+      5 アメリカの映画を見ました。
+      6 チャップリンの「モダンタイムズ」を見ました。
+      7 おもしろかったですか。
+      8 わかりません。
+      9 <ruby>
+        <rb>眼鏡</rb>
+        <rp>(</rp>
+        <rt>めがね</rt>
+        <rp>)</rp>
+      </ruby>を<ruby>
+        <rb>忘</rb>
+        <rp>(</rp>
+        <rt>わす</rt>
+        <rp>)</rp>
+      </ruby>れました。
+      10 よく見えませんでした。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>九</b>課</div>
+    <div class="title"><ruby>
+        <rb>中華</rb>
+        <rp>(</rp>
+        <rt>ちゅうか</rt>
+        <rp>)</rp>
+      </ruby><ruby>
+        <rb>料理</rb>
+        <rp>(</rp>
+        <rt>りょうり</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 今晩中華料理を食べましょうか。
+      2 ああ、いいですね。
+      3 中華料理が大好きです。
+      4 私も。
+      5 スープと肉と魚をとりましょう。
+      6 そうですね。
+      7 お<ruby>
+        <rb>箸</rb>
+        <rp>(</rp>
+        <rt>はし</rt>
+        <rp>)</rp>
+      </ruby>で食べますか。
+      8 いいえ、フォークで食べます。
+      9 おねがいします。フォークを下さい。
+      10 はい、どうぞ。
+      11 ありがとう。
+      12 おいしいですか。
+      13 とてもおいしいです。
+      14 また来ましょう。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>十</b>課</div>
+    <div class="title">テレビ</div>
+    <span>
+      1 お<ruby>
+        <rb>相撲</rb>
+        <rp>(</rp>
+        <rt>すもう</rt>
+        <rp>)</rp>
+      </ruby>を見ましたか。
+      2 はい、テレビで見ました。
+      3 またお相撲のシーズンですね。
+      4 そうですね。
+      5 よくテレビを見ますか。
+      6 時々見ます。
+      7 テレビで何を見ますか。
+      8 ニュースとドラマを見ます。
+      9 どちらが好きですか。
+      10 どちらも好きです。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>十一</b>課</div>
+    <div class="title"><ruby>
+        <rb>朝</rb>
+        <rp>(</rp>
+        <rt>あさ</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 朝何時に起きますか。
+      2 十一時に起きます。
+      3 <ruby>
+        <rb>遅</rb>
+        <rp>(</rp>
+        <rt>おそ</rt>
+        <rp>)</rp>
+      </ruby>いですね。
+      4 <ruby>
+        <rb>夜</rb>
+        <rp>(</rp>
+        <rt>よる</rt>
+        <rp>)</rp>
+      </ruby>何時に寝ますか。
+      5 <ruby>
+        <rb>夜中</rb>
+        <rp>(</rp>
+        <rt>よなか</rt>
+        <rp>)</rp>
+      </ruby>の三時に寝ます。
+      6 でも今日は十時に起きました。
+      7 それでも遅いですね。
+      8 午後から夜中までバーで<ruby>
+        <rb>働</rb>
+        <rp>(</rp>
+        <rt>はたら</rt>
+        <rp>)</rp>
+      </ruby>いています。
+      9 それならわかります。
+      10 <ruby>
+        <rb>大変</rb>
+        <rp>(</rp>
+        <rt>たいへん</rt>
+        <rp>)</rp>
+      </ruby>ですね。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>十二</b>課</div>
+    <div class="title"><ruby>
+        <rb>喫茶店</rb>
+        <rp>(</rp>
+        <rt>きっさてん</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 こんにちは。
+      2 こんにちは。
+      3 あそこの喫茶店へ行きましょう。
+      4 いらっしゃいませ。
+      5 山田さんは何にしますか。
+      6 私はコーヒー。
+      7 じゃあ、コーヒーとビールを下さい。
+      8 お<ruby>
+        <rb>菓子</rb>
+        <rp>(</rp>
+        <rt>かし</rt>
+        <rp>)</rp>
+      </ruby>を食べましょうか。
+      9 いいえ、けっこうです。
+      10 <ruby>
+        <rb>本当</rb>
+        <rp>(</rp>
+        <rt>ほんとう</rt>
+        <rp>)</rp>
+      </ruby>ですか。
+      11 ええ、本当にけっこうです。今ダイエットをしています。
+      12 ああ、そうですか。いつから？
+      13 昨日から。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>十三</b>課</div>
+    <div class="title"><ruby>
+        <rb>約束</rb>
+        <rp>(</rp>
+        <rt>やくそく</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 <ruby>
+        <rb>今朝</rb>
+        <rp>(</rp>
+        <rt>けさ</rt>
+        <rp>)</rp>
+      </ruby>フランス人の友達をデパートの前で一時間<ruby>
+        <rb>待</rb>
+        <rp>(</rp>
+        <rt>ま</rt>
+        <rp>)</rp>
+      </ruby>ちました。
+      2 <ruby>
+        <rb>随分</rb>
+        <rp>(</rp>
+        <rt>ずいぶん</rt>
+        <rp>)</rp>
+      </ruby>待ちましたね。
+      3 はい。
+      4 来ましたか。
+      5 いいえ、来ませんでした。
+      6 どうしたのでしょう。
+      7 わかりません。
+      8 こまりましたね。
+      9 ええ、買物ができませんでした。
+      10 今晩友達に電話をします。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="title">復習会話</div>
+    <span>
+      1 昨日の朝八時に起きました。
+      2 夜何時から何時までテレビを見ますか。
+      3 デパートで働いています。
+      4 アメリカ人の友達もデパートで働いています。
+      5 バスで来ませんでした。
+      6 電話ができませんでした。
+      7 押上駅の前で二時間待ちました。
+      8 私はコーヒーとお菓子にします。
+      9 お箸で食べません。フォークを下さい。
+      10 今日の午後買物に行きましょう。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>十五</b>課</div>
+    <div class="title">紹介</div>
+    <span>
+      1 <ruby>
+        <rb>小林</rb>
+        <rp>(</rp>
+        <rt>こばやし</rt>
+        <rp>)</rp>
+      </ruby><ruby>
+        <rb>道子</rb>
+        <rp>(</rp>
+        <rt>みちこ</rt>
+        <rp>)</rp>
+      </ruby>と<ruby>
+        <rb>申</rb>
+        <rp>(</rp>
+        <rt>もう</rt>
+        <rp>)</rp>
+      </ruby>します。
+      2 東京に<ruby>
+        <rb>住</rb>
+        <rp>(</rp>
+        <rt>す</rt>
+        <rp>)</rp>
+      </ruby>んでいます。
+      3 三年前に<ruby>
+        <rb>結婚</rb>
+        <rp>(</rp>
+        <rt>けっこん</rt>
+        <rp>)</rp>
+      </ruby>しました。
+      4 子供が二人います。
+      5 女の子と男の子です。
+      6 お<ruby>
+        <rb>嬢</rb>
+        <rp>(</rp>
+        <rt>じょう</rt>
+        <rp>)</rp>
+      </ruby>さんはいくつですか。
+      7 今十五歳です。
+      8 え？
+      9 はい。<ruby>
+        <rb>実</rb>
+        <rp>(</rp>
+        <rt>じつ</rt>
+        <rp>)</rp>
+      </ruby>は三年前に<ruby>
+        <rb>再婚</rb>
+        <rp>(</rp>
+        <rt>さいこん</rt>
+        <rp>)</rp>
+      </ruby>しました。
+      10 お<ruby>
+        <rb>坊</rb>
+        <rp>(</rp>
+        <rt>ぼっ</rt>
+        <rp>)</rp>
+      </ruby>ちゃんはいくつですか。
+      11 まだ一歳です。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>十六</b>課</div>
+    <div class="title">日曜日</div>
+    <span>
+      1 今日は日曜日です。
+      2 お天気がいいですね。
+      3 ピクニックに行きましょうか。
+      4 いいですね。
+      5 田中さんと山本さんを<ruby>
+        <rb>誘</rb>
+        <rp>(</rp>
+        <rt>さそ</rt>
+        <rp>)</rp>
+      </ruby>いましょう。
+      6 ああそれはいい<ruby>
+        <rb>考</rb>
+        <rp>(</rp>
+        <rt>かんが</rt>
+        <rp>)</rp>
+      </ruby>えですね。
+      7 どこへ行きましょうか。
+      8 <ruby>
+        <rb>江ノ島</rb>
+        <rp>(</rp>
+        <rt>えのしま</rt>
+        <rp>)</rp>
+      </ruby>はいかがですか。
+      9 何を持って行きましょうか。
+      10 サンドイッチにお<ruby>
+        <rb>寿司</rb>
+        <rp>(</rp>
+        <rt>すし</rt>
+        <rp>)</rp>
+      </ruby>にみかんにお菓子。
+      11 子供のためにジュースも持って行きましょう。
+      12 田中さんと山本さんにすぐ電話をかけましょう。
+      13 はい。おねがいします。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>十七</b>課</div>
+    <div class="title">のみの<ruby>
+        <rb>市</rb>
+        <rp>(</rp>
+        <rt>いち</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 その<ruby>
+        <rb>箱</rb>
+        <rp>(</rp>
+        <rt>はこ</rt>
+        <rp>)</rp>
+      </ruby>の右の<ruby>
+        <rb>茶碗</rb>
+        <rp>(</rp>
+        <rt>ちゃわん</rt>
+        <rp>)</rp>
+      </ruby>はいくらですか。
+      2 これですか。
+      3 いいえ、その左の茶碗です。
+      4 ええと・・・これは三万円です。
+      5 三万円ですか。高いですね。
+      6 あ、ごめんなさい。三千円です。
+      7 ちょっと見せてください。
+      8 はい、どうぞ。
+      9 古いものですか。
+      10 そうですよ。<ruby>
+        <rb>江戸</rb>
+        <rp>(</rp>
+        <rt>えど</rt>
+        <rp>)</rp>
+      </ruby><ruby>
+        <rb>時代</rb>
+        <rp>(</rp>
+        <rt>じだい</rt>
+        <rp>)</rp>
+      </ruby>のものです。
+      11 ではこれを下さい。はい三千円。
+      12 どうもありがとうございます。
+      13 あれ。茶碗の<ruby>
+        <rb>裏</rb>
+        <rp>(</rp>
+        <rt>うら</rt>
+        <rp>)</rp>
+      </ruby>に「Made in Hong-Kong」と書いてある。やられた。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>十八</b>課</div>
+    <div class="title"><ruby>
+        <rb>本屋</rb>
+        <rp>(</rp>
+        <rt>ほんや</rt>
+        <rp>)</rp>
+      </ruby></div>
+    <span>
+      1 いらっしゃいませ。
+      2 トルストイの「<ruby>
+        <rb>戦争</rb>
+        <rp>(</rp>
+        <rt>せんそう</rt>
+        <rp>)</rp>
+      </ruby>と<ruby>
+        <rb>平和</rb>
+        <rp>(</rp>
+        <rt>へいわ</rt>
+        <rp>)</rp>
+      </ruby>」はありますか。
+      3「戦争と平和」ですか。
+      4 はい、あります。
+      5 しょうしょうお<ruby>
+        <rb>待</rb>
+        <rp>(</rp>
+        <rt>ま</rt>
+        <rp>)</rp>
+      </ruby>ちください。
+      6 それから料理の本を見せてください。
+      7 日本料理ですか、フランス料理ですか、中華料理ですか。
+      8 実は今<ruby>
+        <rb>家内</rb>
+        <rp>(</rp>
+        <rt>かない</rt>
+        <rp>)</rp>
+      </ruby>が<ruby>
+        <rb>留守</rb>
+        <rp>(</rp>
+        <rt>るす</rt>
+        <rp>)</rp>
+      </ruby>です。
+      9 <ruby>
+        <rb>自分</rb>
+        <rp>(</rp>
+        <rt>じぶん</rt>
+        <rp>)</rp>
+      </ruby>で料理をしなければなりません。
+      10 それではこの本をおすすめします。
+      11 実は私もこれで<ruby>
+        <rb>作</rb>
+        <rp>(</rp>
+        <rt>つく</rt>
+        <rp>)</rp>
+      </ruby>ります。
+      12 <ruby>
+        <rb>簡単</rb>
+        <rp>(</rp>
+        <rt>かんたん</rt>
+        <rp>)</rp>
+      </ruby>にできます。
+      13 それではこれにします。
+      14 <ruby>
+        <rb>毎度</rb>
+        <rp>(</rp>
+        <rt>まいど</rt>
+        <rp>)</rp>
+      </ruby>ありがとうございます。
+    </span>
+  </div>
+
+  <div class="dialogue">
+    <div class="number">第<b>十九</b>課</div>
+    <div class="title">コンサート</div>
+    <span>
+      1 このうつくしい人はだれですか。
+      2 この<ruby>
+        <rb>写真</rb>
+        <rp>(</rp>
+        <rt>しゃしん</rt>
+        <rp>)</rp>
+      </ruby>の人ですか。
+      3 はい、そうです。
+      4 <ruby>
+        <rb>山口</rb>
+        <rp>(</rp>
+        <rt>やまぐち</rt>
+        <rp>)</rp>
+      </ruby><ruby>
+        <rb>文子</rb>
+        <rp>(</rp>
+        <rt>ふみこ</rt>
+        <rp>)</rp>
+      </ruby>です。
+      5 <ruby>
+        <rb>女優</rb>
+        <rp>(</rp>
+        <rt>じょゆう</rt>
+        <rp>)</rp>
+      </ruby>ですか。
+      6 いいえ、女優ではありません。<ruby>
+        <rb>歌手</rb>
+        <rp>(</rp>
+        <rt>かしゅ</rt>
+        <rp>)</rp>
+      </ruby>です。
+      7 どんな<ruby>
+        <rb>歌</rb>
+        <rp>(</rp>
+        <rt>うた</rt>
+        <rp>)</rp>
+      </ruby>を歌いますか。
+      8 ジャズです。
+      9 こんどの土曜日にサンプラザでコンサートがあります。
+      10 一緒にいかがですか。
+      11 とてもざんねんですが、<ruby>
+        <rb>都合</rb>
+        <rp>(</rp>
+        <rt>つごう</rt>
+        <rp>)</rp>
+      </ruby>がわるいです。
+      12 ざんねんですね。
+      13 写真よりもっとうつくしい人ですよ。
+      14 ほんとう？
+      15 <ruby>
+        <rb>約束</rb>
+        <rp>(</rp>
+        <rt>やくそく</rt>
+        <rp>)</rp>
+      </ruby>をやめようかな。
+      16 でもそれはむりだなあ。
+      17 それではまたこの次の<ruby>
+        <rb>機会</rb>
+        <rp>(</rp>
+        <rt>きかい</rt>
+        <rp>)</rp>
+      </ruby>にお誘いしましょう。
+      18 ぜひおねがいします。
+    </span>
+  </div>
+
+  <!-- <div class="dialogue">
+    <div class="number">number</div>
+    <div class="title">title</div>
+    <span>
+
+    </span>
+  </div> -->
+
+</div>
